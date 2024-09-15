@@ -1,0 +1,270 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* ************* se hace distribución de elementos para versión Mobile************* */
+
+.menu-navegacion{
+    grid-area: menunav;
+    background-color: #606c38;
+    
+}
+
+.filtros-busqueda{
+    grid-area: filtrosb;
+    background-color: #fefae0;
+}
+.principal{
+    grid-area: principal;
+}
+.pie-pagina{
+    grid-area: pie;
+    background-color: #283618 ;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-areas: 
+    "menunav"
+    "filtrosb"
+    "principal"
+    "pie";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto auto;
+    height: 100vh;
+}
+
+/* ************* Menú de Navegación************* */
+.menu-navegacion{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fefae0;
+    padding: 2%;
+    
+}
+.menu-navegacion li{
+    list-style-type: none;
+    
+
+}
+.menu-navegacion span{
+    color: #dda15e ;
+}
+.logo{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/************** Filtros de Búsqueda**************/
+
+.filtros-busqueda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2%;
+    
+
+}
+.select{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    padding: 2%;
+}
+.select select{
+    flex-grow: 1;
+    width: 100%;
+  
+}
+.select option{
+  color: #fefae0;
+  background-color: #dda15e;
+ 
+}
+
+
+/* ************* sección principal************* */
+
+.principal{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+
+
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    padding: 1%;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
+   margin-top: 2%;
+  
+    
+}
+
+.card img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+  
+}
+
+.card button{
+    width: 30%;
+    background-color: #606c38;
+    color: #fefae0;
+    border: none;
+    
+  
+}
+.botones-numeros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    gap: 15px;
+}
+
+.botones-numeros button{
+    display: flex;
+    gap: 1px;
+    background-color: #fefae0;
+    color: #606c38;
+    border: none;
+    
+}
+
+/* ************* footer************* */
+.pie-pagina{
+    display: flex;
+    padding: 2%;
+    justify-content: center;
+    align-items: center;
+    color: #fefae0;
+    flex-direction: column;
+    text-align: center;
+    
+
+}
+/* ************* Medias Queries dispositivos moviles************* */
+@media (width <= 576px){
+    .menu-plegable{
+        display: none;
+    }
+}
+/* ************* Medias Queries tablet y escritorio (opcional)************* */
+@media (width >= 576px){
+    .grid-container{
+        grid-template-areas: 
+        "menunav menunav"
+        "filtrosb principal"
+        "pie pie";
+        grid-template-columns: auto 1fr;
+        grid-template-rows: 1fr auto afr;
+
+
+    }
+    .menu-navegacion{
+        padding-right: 10%;
+    }
+    .icono{
+        display: none;
+    }
+    .menu-plegable ul{
+        display: flex;
+        justify-content: space-evenly;
+        gap: 5%;;
+      
+    }
+    
+    .filtros-busqueda div{
+        align-items: flex-start;
+        align-content: flex-start;
+      
+      
+
+    }
+    
+    
+}
+@media (width >= 992px){
+    .grid-container{
+        grid-template-areas: 
+        "menunav menunav"
+        "filtrosb principal"
+        "pie pie";
+        grid-template-columns: auto 1fr;
+        grid-template-rows: 1fr auto 1fr;
+
+    }
+    .menu-navegacion{
+        padding-right: 10%;
+    }
+    .icono{
+        display: none;
+    }
+    .menu-plegable ul{
+        display: flex;
+        justify-content: space-evenly;
+        gap: 5%;;
+      
+    }
+    
+    .filtros-busqueda div{
+        align-items: flex-start;
+        align-content: flex-start;
+      
+    }
+    
+    
+}
+/* ************* Medias Queries versión desktop)************* */
+
+@media (width >= 1200px){
+    .grid-container{
+        grid-template-areas: 
+        "menunav filtrosb"
+        "menunav principal"
+        "pie principal";
+        grid-template-columns:1fr 9fr;
+        grid-template-rows: 1fr auto;
+    }
+    .icono{
+        display: none;
+
+    }
+    .menu-navegacion{
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .menu-plegable ul{
+        flex-direction: column;
+        margin-top: 10%;
+    }
+    
+
+}
+
+
+
+
+
+
